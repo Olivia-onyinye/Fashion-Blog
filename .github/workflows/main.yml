@@ -21,4 +21,4 @@ jobs:
         with:
           maven-version: 3.8.2
       - name: run compile
-        run: mvn clean install
+        run: mvn clean install -DskipTests
