@@ -7,5 +7,4 @@ ENV spring.datasource.password=Kamsiyochukwu1*
 COPY ./target/Fashion-Blog-0.0.1-SNAPSHOT.jar /opt/Fashion-Blog-0.0.1.jar
 COPY . /opt/
 ENTRYPOINT ["java", "-jar", "/opt/Fashion-Blog-0.0.1.jar", "--server.port=8087", "--spring.config.location=file:/opt/src/main/resources/"]
-#CMD ["sleep", "2000"]
 
