@@ -67,6 +67,7 @@
                 </configuration>
             </plugin>
         </plugins>
+<!--        <finalName>fashion-blog-app-image</finalName>-->
     </build>
 
 </project>
