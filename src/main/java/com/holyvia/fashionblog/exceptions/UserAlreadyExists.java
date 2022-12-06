@@ -1,20 +1,21 @@
 package com.holyvia.fashionblog.exceptions;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class AlreadyExistException extends RuntimeException{
+public class UserAlreadyExists extends RuntimeException{
     private String debugMessage;
 
-    public AlreadyExistException(String message) {
+    public UserAlreadyExists(String message) {
+
         super(message);
     }
 
-    public AlreadyExistException(String message, String debugMessage) {
+    public UserAlreadyExists(String message, String debugMessage) {
         super(message);
         this.debugMessage = debugMessage;
     }
 }
-

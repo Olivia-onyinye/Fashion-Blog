@@ -5,16 +5,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AlreadyExistException extends RuntimeException{
+public class IncorrectValueEntryException extends RuntimeException{
     private String debugMessage;
+    public IncorrectValueEntryException(String message){
 
-    public AlreadyExistException(String message) {
         super(message);
     }
-
-    public AlreadyExistException(String message, String debugMessage) {
+    public IncorrectValueEntryException(String message, String debugMessage){
         super(message);
         this.debugMessage = debugMessage;
     }
 }
-
