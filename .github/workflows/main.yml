@@ -26,7 +26,6 @@ jobs:
         uses: einaregilsson/build-number@v3
         with:
           token: ${{secrets.github_token}}
-
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
