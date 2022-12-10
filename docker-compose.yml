@@ -2,7 +2,7 @@ version: "3.7"
 services:
   server:
     build: .
-    restart: always
+#    restart: always
     ports:
       - 8081:8087
     depends_on:

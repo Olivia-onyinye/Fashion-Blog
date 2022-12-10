@@ -37,7 +37,7 @@ public class User {
     @Column(nullable = false, length = 50)
     private String name;
 
-    @Email
+    @Email(message = "Enter a valid email address")
     @Column(name = "user_email", nullable = false)
     private String email;
 
