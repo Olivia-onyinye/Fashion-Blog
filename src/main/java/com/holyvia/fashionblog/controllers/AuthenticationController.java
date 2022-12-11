@@ -29,6 +29,11 @@ public class AuthenticationController {
         return new ResponseEntity<>("Login Successful", HttpStatus.OK);
     }
 
+    @GetMapping("/")
+    public ResponseEntity<String> welcome(){
+        return new ResponseEntity<>("welcome Successful", HttpStatus.OK);
+    }
+
     @GetMapping("/log-out")
     public ResponseEntity<String> logout(){
         userService.logoutUser();

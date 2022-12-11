@@ -1,19 +1,52 @@
 version: "3.7"
 services:
-  server:
+  app:
+    image: "fashion-blog-app:latest"
+    container_name: fashionBlogApp
     build: .
-#    restart: always
-    ports:
-      - 8081:8087
-    depends_on:
-      - mysqldb
-  mysqldb:
-    platform: linux/x86_64
-    image: "mysql:8.0.29"
     restart: always
     ports:
-      - 3307:3306
+      - "8087:8087"
+    depends_on:
+      - fashionBlog2
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://fashionBlog2:3306/fashionBlog2
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Kamsiyochukwu1*
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  fashionBlog2:
+    platform: linux/x86_64
+    image: "mysql:latest"
+    container_name: fashionBlog
+    restart: always
+    ports:
+      - "3308:3308"
     environment:
       MYSQL_DATABASE: fashionBlog2
       MYSQL_ROOT_PASSWORD: Kamsiyochukwu1*
       MYSQL_ROOT_USERNAME: root
+
+
+
+#version: "3.7"
+#services:
+#  server:
+#    build: .
+#    restart: always
+#    ports:
+#      - "8080:8087"
+#    depends_on:
+#      - fashionBlog2
+#
+#  mysqldb:
+#    platform: linux/x86_64
+#    image: "mysql:latest"
+#    container_name: fashionBlog
+#    restart: always
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_DATABASE: fashionBlog2
+#      MYSQL_ROOT_PASSWORD: Kamsiyochukwu1*
+#      MYSQL_ROOT_USERNAME: root
